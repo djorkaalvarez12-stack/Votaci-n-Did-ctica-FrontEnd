@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+}
+
+.login-page {
+  min-height: 100vh;
+  background: #ddffe2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 30vw;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.avatar-wrapper {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.avatar-border {
+  width: 128px;
+  height: 128px;
+  padding: 4px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #006941, #7bfeb8);
+  transform: rotate(-3deg);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(11, 54, 29, 0.2);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+}
+
+.avatar-icon {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  background: #ff9473;
+  color: #5f1600;
+  padding: 12px;
+  border-radius: 50%;
+  transform: rotate(12deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.title-group h1 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 38px;
+  margin: 0;
+  color: #0b361d;
+  font-weight: 800;
+}
+
+.title-group p {
+  margin-top: 8px;
+  color: #3b6447;
+  font-weight: 500;
+}
+
+.login-card {
+  background: #cafdd4;
+  padding: 32px;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  box-shadow: 0 40px 60px rgba(11, 54, 29, 0.05);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #3b6447;
+}
+
+.password-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-btn {
+  border: none;
+  background: transparent;
+  color: #006941;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 18px;
+  background: white;
+  padding: 0 52px;
+  font-size: 15px;
+  color: #0b361d;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-wrapper input:focus {
+  box-shadow: 0 0 0 4px rgba(123, 254, 184, 0.4);
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #568061;
+}
+
+.visibility-btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #568061;
+}
+
+.login-btn {
+  height: 64px;
+  border: none;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #006941, #7bfeb8);
+  color: #caffdc;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: 0.2s;
+  box-shadow: 0 10px 20px rgba(0, 105, 65, 0.2);
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+}
+
+.login-btn:active {
+  transform: scale(0.98);
+}
+
+.login-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: rgba(86, 128, 97, 0.3);
+}
+
+.divider span {
+  font-size: 12px;
+  font-weight: 800;
+  color: #3b6447;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.social-btn {
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background: #bef5c9;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.social-btn:hover {
+  background: #b5f0c2;
+}
+
+.social-btn:active {
+  transform: scale(0.9);
+}
+
+.register-text {
+  color: #3b6447;
+  font-weight: 500;
+}
+
+.register-text button {
+  border: none;
+  background: transparent;
+  color: #006941;
+  font-weight: 800;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.bg-blur {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+}
+
+.blur-left {
+  top: 10%;
+  left: 5%;
+  background: #7bfeb8;
+}
+
+.blur-right {
+  bottom: 10%;
+  right: 5%;
+  background: #ff9473;
+}
+
+/* styles.css */
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+/* Tipografía de títulos */
+h1,
+h2,
+h3 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
