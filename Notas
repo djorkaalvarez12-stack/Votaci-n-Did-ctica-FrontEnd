@@ -1,0 +1,4 @@
+abres viusal code y abres el proyecto que habimos creado de votación didactica
+abres una terminal y ejecutas "git pull origin main"
+para ejecutar el programa puedes usar "npm run build"
+pero como ya esta en linea solo usas el link "https://votaci-n-did-ctica-front-end.vercel.app/login"
