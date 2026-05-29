@@ -25,15 +25,23 @@ jobs:
       - name: Instalar Vercel CLI Globalmente
         run: npm install -g vercel
 
+      # 1. Creamos la configuración local para Vercel en la máquina virtual de GitHub
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=production --token="${{ secrets.VERCEL_TOKEN }}"
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      # 2. Compilamos el proyecto inyectando TODAS las variables necesarias
       - name: Compilar proyecto (Build)
         run: npm run build
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
-      # ==== DESPLIEGUE FORZANDO LA CARPETA DIST EN EL COMANDO ====
+      # 3. Desplegamos la carpeta dist pre-compilada directamente sin que Vercel vuelva a compilar en la nube
       - name: Desplegar en Producción
-        run: vercel --token="${{ secrets.VERCEL_TOKEN }}" --prod --yes --archive=tgz
+        run: vercel deploy --prebuilt --token="${{ secrets.VERCEL_TOKEN }}" --prod --yes
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
