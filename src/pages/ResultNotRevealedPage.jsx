@@ -9,7 +9,7 @@ function ResultNotRevealedPage({ user, poll, onReveal, onLogout }) {
       navigate("/login");
     }
   }, [navigate, user]);
-  const safeUrlId = encryptId(poll?.id || selectedPoll?.id);
+  const safeUrlId = poll?.id || selectedPoll?.id;
   const isAdmin = user?.role === "admin";
   const title = poll?.title ?? "Encuesta pendiente";
   const description =
