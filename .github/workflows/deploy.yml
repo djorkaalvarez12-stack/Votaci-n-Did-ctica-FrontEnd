@@ -3,7 +3,7 @@ name: Despliegue Automático (Vercel)
 on:
   push:
     branches:
-      - main # Asegúrate de que coincida con tu rama principal (main o master)
+      - main # Cambia a 'coding' si prefieres desplegar desde tu otra rama
 
 jobs:
   deploy:
@@ -30,11 +30,10 @@ jobs:
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
-          VITE_ENCRYPTION_KEY: ${{ secrets.VITE_ENCRYPTION_KEY }}
 
-      # ==== DESPLIEGUE DIRECTO CON EL CLI OFICIAL DE VERCEL ====
+      # ==== DESPLIEGUE FORZANDO LA CARPETA DIST EN EL COMANDO ====
       - name: Desplegar en Producción
-        run: vercel --token=${{ secrets.VERCEL_TOKEN }} --prod --yes
+        run: vercel --token="${{ secrets.VERCEL_TOKEN }}" --prod --yes --archive=tgz
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
