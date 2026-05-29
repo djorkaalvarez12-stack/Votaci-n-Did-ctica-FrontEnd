@@ -1,61 +1,38 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Configuración global de fuentes */
+:root {
+  color-scheme: light;
+}
+
+html {
+  min-height: 100%;
+}
+
 body {
+  @apply min-h-screen bg-background text-on-background antialiased;
   font-family: "Manrope", sans-serif;
   min-height: max(884px, 100dvh);
 }
 
-h1,
-h2,
-h3,
-h4,
-.font-headline {
-  font-family: "Plus Jakarta Sans", sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-/* Material Symbols configuration */
+::selection {
+  background-color: #7bfeb8;
+  color: #004b2d;
+}
+
 .material-symbols-outlined {
   font-variation-settings:
     "FILL" 0,
     "wght" 400,
     "GRAD" 0,
     "opsz" 24;
-  display: inline-block;
-  vertical-align: middle;
 }
 
-/* Patrón trasero de la carta de Poker */
-.poker-card-back {
-  background: linear-gradient(135deg, #006941 0%, #004b2d 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.poker-card-back::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(#7bfeb8 1px, transparent 1px);
-  background-size: 8px 8px;
-  opacity: 0.2;
-}
-
-/* Gráfico de torta (Pie Chart con conic-gradient) */
-.pie-chart {
-  background: conic-gradient(
-    #006941 0% 32%,
-    #ff7d55 32% 62%,
-    #005f99 62% 77%,
-    #a83206 77% 87%,
-    #8bb795 87% 100%
-  );
-  border-radius: 50%;
-}
-
-/* Utilidades extras de scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -71,4 +48,30 @@ h4,
     transparent 0
   );
   background-size: 12px 12px;
+}
+
+.poker-card-back {
+  background: linear-gradient(135deg, #006941 0%, #004b2d 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.poker-card-back::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#7bfeb8 1px, transparent 1px);
+  background-size: 8px 8px;
+  opacity: 0.2;
+}
+
+.pie-chart {
+  background: conic-gradient(
+    #006941 0% 32%,
+    #ff7d55 32% 62%,
+    #005f99 62% 77%,
+    #a83206 77% 87%,
+    #8bb795 87% 100%
+  );
+  border-radius: 9999px;
 }
