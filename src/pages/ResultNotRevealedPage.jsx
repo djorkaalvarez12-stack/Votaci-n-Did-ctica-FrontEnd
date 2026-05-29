@@ -1,6 +1,5 @@
 ﻿import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { encryptId } from "../lib/encryption";
 
 function ResultNotRevealedPage({ user, poll, onReveal, onLogout }) {
   const navigate = useNavigate();
